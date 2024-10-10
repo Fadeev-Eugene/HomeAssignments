@@ -1,3 +1,6 @@
+//Fadeev Eugene st128225@student.spbu.ru
+//This is header for assignment 2b, which connects main.cpp and func.cpp.
+
 #ifndef FUNK_H
 #define FUNK_H
 
