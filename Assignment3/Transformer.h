@@ -26,7 +26,7 @@ protected:
 
 public:
     Transformer(const std::string& name, unsigned health, unsigned level, unsigned strength, unsigned perception, const Weapon& weapon)
-        :name(name), health(health), level(level), weapon(weapon), strength(strength), perception(perception), vehicle(nullptr) 
+        :name(name), health(health), level(level), strength(strength), perception(perception), weapon(weapon), vehicle(nullptr) 
     {
         std::cout << "Transformer " << name << " is created." << std::endl;
     }
