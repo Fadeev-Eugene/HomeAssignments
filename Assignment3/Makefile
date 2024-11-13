@@ -1,25 +1,29 @@
 CXX = g++
-CXXFLAGS = -g -Wall -pthread -I/path/to/googletest/include
-GTEST_LIBS = -L/path/to/googletest/lib -lgtest -lgtest_main
+CXXFLAGS = -std=c++11 -Wall -Werror -Wpedantic
+LDXXFLAGS = -lgtest -lgtest_main
 
-SRCS = Test1.cpp Test2.cpp Test3.cpp
-OBJS = $(SRCS:.cpp=.o)
+SRC = Transformer.cpp Autobot.cpp Decepticon.cpp Dinobot.cpp Weapon.cpp Vehicle.cpp
+OBJ = $(SRC:.cpp=.o)
+TEST_SRC = test.cpp
+TEST_OBJ = $(TEST_SRC:.cpp=.o)
+TARGET = test
 
-TARGET = test1 test2 test3
+.PHONY: default all clean cleanall
+
+default: all
 
 all: $(TARGET)
 
-test1: Test1.o $(OBJS)
-	$(CXX) -o $@ $^ $(GTEST_LIBS)
-
-test2: Test2.o $(OBJS)
-	$(CXX) -o $@ $^ $(GTEST_LIBS)
-
-test3: Test3.o $(OBJS)
-	$(CXX) -o $@ $^ $(GTEST_LIBS)
-
 %.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
+
+$(TARGET): $(OBJ) $(TEST_OBJ)
+	$(CXX) -o $@ $(OBJ) $(TEST_OBJ) $(LDXXFLAGS)
+
+test: $(TARGET)
 
 clean:
-	rm -f $(TARGET) *.o
+	rm -f *.o
+
+cleanall: clean
+	rm -f $(TARGET)

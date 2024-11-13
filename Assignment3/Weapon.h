@@ -6,20 +6,22 @@
 #define WEAPON_H
 
 #include <string>
+#include <iostream>
 
-class Weapon {
+class Weapon
+{
 protected:
     std::string type;
     int damage;
-    
+
 public:
-    Weapon(const std::string& type, int damage) : type(type), damage(damage) {}
+    Weapon(const std::string& name, int damage);
 
-    const std::string& getType() const { return type; }
-    const int& getDamage() const { return damage; }
+    const std::string& getType() const;
+    const int& getDamage() const;
 
-    void setType(const std::string& type) { this->type = type; }
-    void setDamage(int damage) { this->damage = damage; }
+    void setType(const std::string& name);
+    void setDamage(int speed);
 };
 
 

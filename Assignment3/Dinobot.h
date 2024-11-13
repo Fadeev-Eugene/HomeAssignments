@@ -2,31 +2,32 @@
 //This header file contains implementation of dinobot class for assignment 3.
 
 
-#ifndef AUTOBOT_H
-#define AUTOBOT_H
+#ifndef DINOBOT_H
+#define DINOBOT_H
 
 #include <string>
+#include <iostream>
 #include "Transformer.h"
 
 
-class Dinobot : public Transformer {
+class Dinobot : public Transformer
+{
 private:
     std::string rank;
     std::string role;
 
 public:
-    Dinobot(const std::string& name, unsigned health, unsigned level, unsigned strength, unsigned perception, const Weapon& weapon, const std::string& rank, const std::string& role)
-        : Transformer(name, health, level, strength, perception, weapon), rank(rank), role(role){
-    }
+    Dinobot(const std::string& name, unsigned health, unsigned level, unsigned strength, unsigned perception, const Weapon& weapon, const std::string& rank, const std::string& role);
 
-    const std::string& getRank() const { return rank; }
-    const std::string& getRole() const { return role; }
-    
-    void setRank(const std::string& rank) { this->rank = rank; }
-    void setRole(const std::string& role) { this->role = role; }
+    const std::string& getRank() const;
+    const std::string& getRole() const;
 
-    bool defend() { return (true); }
-    bool heal() { return (true); }
+    void setRank(const std::string& rank);
+    void setRole(const std::string& role);
+
+    bool defend();
+    bool heal();
 };
 
-#endif 
+
+#endif

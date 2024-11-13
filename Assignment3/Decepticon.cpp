@@ -3,25 +3,37 @@
 
 
 #include <string>
+#include <iostream>
 #include "Transformer.h"
+#include "Decepticon.h"
 
 
-class Decepticon : public Transformer {
-private:
-    std::string rank;
-    std::string role;
+Decepticon::Decepticon(const std::string& name, unsigned health, unsigned level, unsigned strength, unsigned perception, const Weapon& weapon, const std::string& rank, const std::string& role)
+    : Transformer(name, health, level, strength, perception, weapon), rank(rank), role(role) {}
 
-public:
-    Decepticon(const std::string& name, unsigned health, unsigned level, unsigned strength, unsigned perception, const Weapon& weapon, const std::string& rank, const std::string& role)
-        : Transformer(name, health, level, strength, perception, weapon), rank(rank), role(role){
-    }
+const std::string& Decepticon::getRank() const
+{
+    return rank;
+}
+const std::string& Decepticon::getRole() const
+{
+    return role;
+}
 
-    const std::string& getRank() const { return rank; }
-    const std::string& getRole() const { return role; }
-    
-    void setRank(const std::string& rank) { this->rank = rank; }
-    void setRole(const std::string& role) { this->role = role; }
+void Decepticon::setRank(const std::string& rank)
+{
+    this->rank = rank;
+}
+void Decepticon::setRole(const std::string& role)
+{
+    this->role = role;
+}
 
-    bool defend() { return (true); }
-    bool heal() { return (true); }
-};
+bool Decepticon::defend()
+{
+    return (true);
+}
+bool Decepticon::heal()
+{
+    return (true);
+}
