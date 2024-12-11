@@ -2,7 +2,7 @@ CXX = g++
 CXXFLAGS = -std=c++11 -Wall -Werror -Wpedantic
 LDXXFLAGS = -lgtest -lgtest_main
 
-SRC = Transformer.cpp Autobot.cpp Decepticon.cpp Dinobot.cpp Weapon.cpp Vehicle.cpp
+SRC = Transformer.cpp Autobot.cpp Decepticon.cpp Weapon.cpp Vehicle.cpp
 OBJ = $(SRC:.cpp=.o)
 TEST_SRC = test.cpp
 TEST_OBJ = $(TEST_SRC:.cpp=.o)
