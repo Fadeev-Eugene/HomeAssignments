@@ -106,7 +106,7 @@ void Transformer::assignVehicle(Vehicle* v)
     vehicle = v;
 }
 
-void Transformer::transform() const 
+void Transformer::transform() const
 {
     std::cout<<"transform Transformer" << std::endl;
 }

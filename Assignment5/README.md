@@ -12,4 +12,4 @@ Impovement of Home Assignment 4:
 ## Build
 make
 ## Run
-./main
+./test
